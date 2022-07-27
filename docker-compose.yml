@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  database:
+    image: mariadb
+    restart : always
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: p@55w0rd
+    ports:
+      - 3355:3306
+    volumes: 
+        - ./init:/var/lib/mysql
